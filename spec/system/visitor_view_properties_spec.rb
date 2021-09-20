@@ -22,6 +22,7 @@ describe 'Visitor view property' do
         expect(page).to have_text('Cobertura de 300m2, churrasqueira e sauna privativa')
         expect(page).to have_text('Quartos: 5')
     end       
+    
     it 'view details' do 
         Property.create(
             title: 'Casa com quintal em Copacabana',
@@ -65,10 +66,12 @@ describe 'Visitor view property' do
             pets: true,
             daily_price: 300
         )
-        visit property_path(property)
+        visit root_path
+        click_on 'Casa com quintal em Copacabana'
         click_on 'Voltar'
     
         expect(current_path).to eq root_path
       end 
+ 
 end
 

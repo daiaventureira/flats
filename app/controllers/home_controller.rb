@@ -3,6 +3,6 @@ class HomeController < ApplicationController
         @properties = Property.all
     end
     def show 
-        @properties = Property.where(params[:id])
+        @properties = Property.find(params[:id])
     end
 end
