@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2021_09_19_173016) do
     t.integer "bathrooms"
     t.boolean "parking_spots"
     t.boolean "pets"
-    t.integer "daily_price"
+    t.decimal "daily_price"
   end
 
 end
