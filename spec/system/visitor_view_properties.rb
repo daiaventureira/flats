@@ -5,14 +5,13 @@ describe 'Visitor view property' do
         Property.create(
             title: 'Casa com quintal em Copacabana',
             description: 'Excelente casa, recém reformada com 2 vagas de garagem',
-            rooms: 3
+            rooms: 3,
         )
         Property.create(
             title: 'Cobertura em Manaus',
             description: 'Cobertura de 300m2, churrasqueira e sauna privativa',
-            rooms: 5
+            rooms: 5,
         )
-        
 
         visit root_path
 
@@ -22,8 +21,6 @@ describe 'Visitor view property' do
         expect(page).to have_text('Cobertura em Manaus')
         expect(page).to have_text('Cobertura de 300m2, churrasqueira e sauna privativa')
         expect(page).to have_text('Quartos: 5')
-
-
-
     end
 end
+

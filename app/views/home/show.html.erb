@@ -1,0 +1,11 @@
+<% @properties.each do |property| %>
+  <h1><%= property.title %></h1>
+  <p><%= property.description %></p>
+  <p>Quartos: <%= property.rooms %></p>
+  <p>Banheiros: <%= property.bathrooms %></p>
+  <p>Estacionamento: <%= property.parking_spots %></p>
+  <p>Pets: <%= property.pets %></p>
+  <p>Diária: <%= property.daily_price %></p>
+<% end %>
+
+<%= link_to 'Voltar', root_path%>
