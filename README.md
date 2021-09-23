@@ -1,24 +1,4 @@
-# README
+# Flats 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is being developed to be a marketplace for vacation rental using Rails 6.1.4 and Ruby. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
