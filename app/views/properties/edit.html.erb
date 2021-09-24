@@ -1,0 +1,40 @@
+<%= form_with(model: @property) do |f|%>
+    <div>
+        <%= f.label :title, 'Título'%>
+        <%= f.text_field :title%>
+    </div>
+     <div>
+        <%= f.label :description, 'Descrição'%>
+        <%= f.text_field :description%>
+    </div>
+     <div>
+        <%= f.label :rooms, 'Quartos'%>
+        <%= f.text_field :rooms%>
+    </div>
+     <div>
+        <%= f.label :bathrooms, 'Banheiros'%>
+        <%= f.text_field :bathrooms%>
+    </div>
+      <div>
+        <%= f.label :daily_price, 'Diária' %>
+        <%= f.text_field :daily_price %>
+    </div>
+     <div>
+        <%= f.label :pets, 'Pets'%>
+        <%= f.check_box :pets%>
+    </div>
+     <div>
+        <%= f.label :parking_spots, 'Estacionamento'%>
+        <%= f.check_box :parking_spots%>
+    </div>
+      <div>
+        <%= f.submit 'Enviar'%>
+    </div>
+<% end %>
+   
+
+
+
+
+
+

@@ -1,9 +1,31 @@
-  <h1><%= @properties.title %></h1>
-  <p><%= @properties.description %></p>
-  <p>Quartos: <%= @properties.rooms %></p>
-  <dt>Banheiros: <%= @properties.bathrooms %></p>
-  <p>Estacionamento: <%= @properties.parking_spots %></p>
-  <p>Pets: <%= @properties.pets %></p>
-  <p>Diária: <%= @properties.daily_price %></p>
+<h1><%= @properties.title %></h1>
+  <h1><%= @properties.description %></h2>
+  <nav>
+    <%= link_to 'Editar', edit_property_path(@properties.id) %>
+  </nav>
+  <dl>
+    <dt>Quartos:</dt>
+      <dd><%= @properties.rooms %></dd>
+    <dt>Banheiros:</dt> 
+      <dd><%= @properties.bathrooms %></dd>
+
+    <dt>Estacionamento:</dt>
+      <% if @properties.parking_spots? %>
+        <dd>Sim</dd>
+      <% else %>
+        <dd>Não</dd>
+      <% end %>
+
+      <dt>Pets:</dt>
+        <% if @properties.pets? %>
+          <dd>Sim</dd>
+        <% else %>
+          <dd>Não</dd>
+        <% end %>
+
+    <dt>Diária: </dt>
+      <dd><%=number_to_currency(@properties.daily_price, unit: 'R$', separator: ',', format: '%u %n') %></dd>
+  </dl>
 
 <%= link_to 'Voltar', root_path%>
+

@@ -15,25 +15,15 @@ describe 'Visitor view property' do
 
         visit root_path
 
-        expect(page).to have_text('Casa com quintal em Copacabana')
-        expect(page).to have_text('Excelente casa, recém reformada com 2 vagas de garagem')
-        expect(page).to have_text('Quartos: 3')
-        expect(page).to have_text('Cobertura em Manaus')
-        expect(page).to have_text('Cobertura de 300m2, churrasqueira e sauna privativa')
-        expect(page).to have_text('Quartos: 5')
+        expect(page).to have_content('Casa com quintal em Copacabana')
+        expect(page).to have_content('Excelente casa, recém reformada com 2 vagas de garagem')
+        expect(page).to have_content('Quartos: 3')
+        expect(page).to have_content('Cobertura em Manaus')
+        expect(page).to have_content('Cobertura de 300m2, churrasqueira e sauna privativa')
+        expect(page).to have_content('Quartos: 5')
     end       
     
     it 'view details' do 
-        Property.create(
-            title: 'Casa com quintal em Copacabana',
-            description: 'Excelente casa, recém reformada com 2 vagas de garagem',
-            rooms: 3,
-            bathrooms: 2,
-            parking_spots: true,
-            pets: true,
-            daily_price: 300
-        )
-
         Property.create(
             title: 'Cobertura em Manaus',
             description: 'Cobertura de 300m2, churrasqueira e sauna privativa',
@@ -47,13 +37,13 @@ describe 'Visitor view property' do
         visit root_path
         click_on 'Cobertura em Manaus'
 
-        expect(page).to have_text('Cobertura em Manaus')
-        expect(page).to have_text('Cobertura de 300m2, churrasqueira e sauna privativa')
-        expect(page).to have_text('Quartos: 5')
-        expect(page).to have_text('Banheiros: 4')
-        expect(page).to have_text('Estacionamento: false')
-        expect(page).to have_text('Pets: true')
-        expect(page).to have_text('Diária: 400')
+        expect(page).to have_content('Cobertura em Manaus')
+        expect(page).to have_content('Cobertura de 300m2, churrasqueira e sauna privativa')
+        expect(page).to have_content('Quartos: 5')
+        expect(page).to have_content('Banheiros: 4')
+        expect(page).to have_content('Estacionamento: Não')
+        expect(page).to have_content('Pets: Sim')
+        expect(page).to have_content('Diária: R$ 400')
     end
 
     it 'and returns to home page' do
