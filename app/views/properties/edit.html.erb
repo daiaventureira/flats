@@ -15,6 +15,10 @@
         <%= f.label :bathrooms, 'Banheiros'%>
         <%= f.text_field :bathrooms%>
     </div>
+     <div>
+        <%= f.label :property_type_id, 'Tipo'%>
+        <%= f.collection_select :property_type_id, PropertyType.all, :id, :name%>
+    </div>
       <div>
         <%= f.label :daily_price, 'Diária' %>
         <%= f.text_field :daily_price %>

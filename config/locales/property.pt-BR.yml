@@ -1,0 +1,9 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      property: "Propriedades"
+    attributes:
+      property:
+        title: "Título"
+        description: "Descrição"

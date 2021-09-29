@@ -1,4 +1,12 @@
+<% if @properties.errors.any? %>
+  <ul>
+    <% @properties.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
 <%= form_with(model: @properties) do |f|%>
+
     <div>
         <%= f.label :title, 'Título'%>
         <%= f.text_field :title%>
@@ -14,6 +22,10 @@
      <div>
         <%= f.label :bathrooms, 'Banheiros'%>
         <%= f.text_field :bathrooms%>
+    </div>
+    <div>
+        <%= f.label :property_type_id, 'Tipo'%>
+        <%= f.collection_select :property_type_id, PropertyType.all, :id, :name%>
     </div>
       <div>
         <%= f.label :daily_price, 'Diária' %>

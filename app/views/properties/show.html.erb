@@ -3,7 +3,10 @@
   <nav>
     <%= link_to 'Editar', edit_property_path(@properties.id) %>
   </nav>
+  
   <dl>
+   <dt>Tipo:</dt>
+      <dd><%= @properties.property_type.name %></dd>
     <dt>Quartos:</dt>
       <dd><%= @properties.rooms %></dd>
     <dt>Banheiros:</dt> 
