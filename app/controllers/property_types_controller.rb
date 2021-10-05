@@ -9,8 +9,11 @@ class PropertyTypesController < ApplicationController
     
     def create 
         @property_types = PropertyType.new(property_type_params)
-        if @property_types 
+        if @property_types.save
             redirect_to root_path
+        else
+            redirect_to "/property_types/new", notice: 'Todos campos devem ser preenchidos'
+
         end
     end
 

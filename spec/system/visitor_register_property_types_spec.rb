@@ -10,22 +10,11 @@ describe 'Visitor register property types' do
     end
 
 
-    # it 'and not accept blank field' do
-    #     PropertyType.create(name: '' )
-
-    #     visit property_types_path
-
-    #     expect { raise StandardError }.to raise_error
-
-    # end
-
-    # it 'and name should be unique' do 
-    #     PropertyType.create(name: 'Flat')
-    #     PropertyType.create(name: 'Flat')
-
-    #     visit property_types_path 
-    #     expect { raise StandardError }.to raise_error
-    # end
-
-end
+    it 'and name should be unique' do 
+        PropertyType.create!(name: 'Flat')
+        property_type = PropertyType.new(name: 'Flat')
+        property_type.valid?
         
+        expect(PropertyType.count).to eq(1)
+    end
+end

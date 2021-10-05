@@ -3,7 +3,6 @@ require 'rails_helper'
 describe 'Visitor view property' do 
     it 'view properties' do 
        
-
         property_type = PropertyType.create!(name: 'Flat')
         Property.create(
             title: 'Casa com quintal em Copacabana',
@@ -29,9 +28,9 @@ describe 'Visitor view property' do
 
         visit root_path
 
-        # expect(page).to have_content('Casa com quintal em Copacabana')
-        # expect(page).to have_content('Excelente casa, recém reformada com 2 vagas de garagem')
-        # expect(page).to have_content('Quartos: 3')
+        expect(page).to have_content('Casa com quintal em Copacabana')
+        expect(page).to have_content('Excelente casa, recém reformada com 2 vagas de garagem')
+        expect(page).to have_content('Quartos: 3')
         expect(page).to have_content('Cobertura em Manaus')
         expect(page).to have_content('Cobertura de 300m2, churrasqueira e sauna privativa')
         expect(page).to have_content('Quartos: 5')

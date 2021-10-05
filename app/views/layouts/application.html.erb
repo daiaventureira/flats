@@ -11,6 +11,19 @@
   </head>
 
   <body>
+  <nav>
+  <% if property_owner_signed_in? %>
+      <%# <p><%= link_to 'Meus Imóveis', df_path%></p> %>
+      <p><%= link_to 'Cadastrar Imovel', new_property_path%></p>
+      <p><%= current_property_owner.email %></p>
+      <p><%= link_to 'Logout', '#'%>
+  <% else %>
+      <p><%= link_to 'Entrar', new_property_owner_session_path%></p>
+  <% end %>
+  </nav>s
+   <div>
+     <%= render partial: "shared/flash"%>
     <%= yield %>
+  </div>
   </body>
 </html>

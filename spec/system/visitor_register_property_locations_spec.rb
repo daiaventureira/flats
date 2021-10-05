@@ -21,7 +21,7 @@ describe 'Visitor register property types' do
     #     PropertyType.create!(name: 'Rio de Janeiro')
 
     #     visit property_locations_path 
-    #     expect(page).to have_content("Nome já existe")
+    #     expect(page).to have_content("Name já está em uso")
     # end
 
 end

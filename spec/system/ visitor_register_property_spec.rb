@@ -1,7 +1,17 @@
 require 'rails_helper'
 
 describe 'Visitor register property' do
-    it 'Successfully' do
+    it 'successfully' do
+
+            property_owner = PropertyOwner.create!(email:'jane@doe.com.br', password:'123456789')
+
+            visit root_path
+            click_on 'Entrar'
+            fill_in 'Email', with: property_owner.email
+            fill_in 'Senha', with: property_owner.password
+            within 'form' do
+            click_on 'Entrar'
+        end
 
         PropertyType.create!(name: 'Casa')
         visit root_path 
